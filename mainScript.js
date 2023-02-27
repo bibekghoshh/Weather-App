@@ -1,5 +1,4 @@
 let data;
-let forecastData;
 
 const dates=new Date();
 
@@ -62,7 +61,7 @@ const getData= async (event)=>{
     const orgData=await currentData.json();
     const orgData2=await forecastDataFetch.json();
     data=orgData;
-    forecastData=orgData2;
+    let forecastData=orgData2;
     // console.log(forecastData);
 
     temp.innerHTML = `${data.current.temp_c}°`;
