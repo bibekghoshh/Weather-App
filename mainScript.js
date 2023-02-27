@@ -1,3 +1,6 @@
+let data;
+let forecastData;
+
 const dates=new Date();
 
 const weekdays=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday",
@@ -50,15 +53,16 @@ const getData= async (event)=>{
     }
 
     const city=inputBox.value;
+    
 
     // Fetch Details
-    // const currentData=await fetch(`http://api.weatherapi.com/v1/current.json?key=763a4987b8584183967112518231302&q=${city}`);
+    const currentData=await fetch(`http://api.weatherapi.com/v1/current.json?key=763a4987b8584183967112518231302&q=${city}`);
     const forecastDataFetch=await fetch(`http://api.weatherapi.com/v1/forecast.json?key=763a4987b8584183967112518231302&q=${city}&days=4`);
 
     const orgData=await currentData.json();
     const orgData2=await forecastDataFetch.json();
-    let data=orgData;
-    let forecastData=orgData2;
+    data=orgData;
+    forecastData=orgData2;
     // console.log(forecastData);
 
     temp.innerHTML = `${data.current.temp_c}°`;
