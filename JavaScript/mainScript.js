@@ -55,8 +55,8 @@ const getData= async (event)=>{
     
 
     // Fetch Details
-    const currentData=await fetch(`http://api.weatherapi.com/v1/current.json?key=763a4987b8584183967112518231302&q=${city}`);
-    const forecastDataFetch=await fetch(`http://api.weatherapi.com/v1/forecast.json?key=763a4987b8584183967112518231302&q=${city}&days=4`);
+    const currentData=await fetch(`https://api.weatherapi.com/v1/current.json?key=763a4987b8584183967112518231302&q=${city}`);
+    const forecastDataFetch=await fetch(`https://api.weatherapi.com/v1/forecast.json?key=763a4987b8584183967112518231302&q=${city}&days=4`);
 
     const orgData=await currentData.json();
     const orgData2=await forecastDataFetch.json();
